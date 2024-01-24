@@ -10,7 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 //middle ware
 
-app.use(cors());
+app.use(cors({
+    origin:"https://mern-todolist-frontend.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+}));
 
 app.use(express.json());
 
